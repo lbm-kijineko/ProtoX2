@@ -5,11 +5,24 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String contentURL;
+    // Activityからデータを戻す
+    public static final String CONTENTS_URL = "jp.co.lbm.protox2.CONTENTS_URL";
+
+    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+       new ActivityResultContracts.StartActivityForResult(), result -> {
+           Intent intent = result.getData();
+           contentURL = intent.getStringExtra(MainActivity.CONTENTS_URL);
+       }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
