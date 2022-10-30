@@ -1,5 +1,6 @@
 package jp.co.lbm.protox2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -16,7 +17,9 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         // アクションバーに戻るを表示
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     @Override
@@ -25,16 +28,20 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         boolean returnVal = true;
         int itemId = item.getItemId();
+        // 戻る矢印押下
         if(itemId == android.R.id.home) {
 
             SettingFragment settingFragment = (SettingFragment)getSupportFragmentManager().findFragmentById(R.id.SettingFragment);
+            if (settingFragment != null) {
+                String contentUrlString = settingFragment.editText.getText().toString();
 
-            String contentUrlString = settingFragment.editText.getText().toString();
+                // MainActivityに戻るので、設定されたコンテンツURLを渡す。
+                // DBに移行するまでの仮コード
+                Intent intent = new Intent();
+                intent.putExtra(MainActivity.CONTENTS_URL, contentUrlString);
 
-            // MainActivityに戻るので、設定されたコンテンツURLを渡す。
-            // DBに移行するまでの仮コード
-            Intent intent = new Intent();
-            intent.putExtra(MainActivity.CONTENTS_URL, contentUrlString);
+                setResult(Activity.RESULT_OK, intent);
+            }
 
             finish();
         }
