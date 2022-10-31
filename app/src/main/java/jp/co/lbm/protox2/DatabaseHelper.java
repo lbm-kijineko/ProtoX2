@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             // すでにデータベースは作成されている
         } else {
             // このメソッドを呼ぶことで、空のデータベースがアプリのデフォルトシステムパスに作られる
-            SQLiteDatabase db = getReadableDatabase();
+            SQLiteDatabase db = getWritableDatabase();
             db.close();
 
             try {

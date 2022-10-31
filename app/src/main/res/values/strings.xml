@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProtoX2</string>
 
-    <string name="overflowmenu_0">設定_０</string>
-    <string name="overflowmenu_1">設定_1</string>
+    <string name="overflowmenu_0">設定</string>
+    <string name="overflowmenu_1">about</string>
 
 </resources>

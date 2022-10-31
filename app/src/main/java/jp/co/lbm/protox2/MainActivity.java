@@ -1,6 +1,10 @@
 package jp.co.lbm.protox2;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,40 +17,83 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.io.IOException;
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     // WebViewで表示したいコンテンツのURL
-    private String contentURL;
+    private String contentsURL;
 
     // アクティビティの結果に対するコールバックの登録
     public static final String CONTENTS_URL = "jp.co.lbm.protox2.CONTENTS_URL";
 
     private WebView webView;
+    private DatabaseHelper dbHelper;
 
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
        new ActivityResultContracts.StartActivityForResult(), result -> {
            Intent intent = result.getData();
 
            if (result.getResultCode() == RESULT_OK) {
-               contentURL = intent.getStringExtra(MainActivity.CONTENTS_URL);
+               contentsURL = Objects.requireNonNull(intent).getStringExtra(MainActivity.CONTENTS_URL);
 
-               if (webView != null) {
-                   webView.loadUrl(contentURL);
+               if (contentsURL != null && !contentsURL.isEmpty()) {
+
+                   if (webView != null) {
+                       webView.loadUrl(contentsURL);
+
+                       SQLiteDatabase db = dbHelper.getWritableDatabase();
+//                       String sql = "update settings set contents_url = \"" + contentURL + "\"";
+                       ContentValues values = new ContentValues();
+                       values.put("contents_url", contentsURL);
+                       long id = db.insert("settings", null, values);
+//                       String sql = "insert into settings(contents_url) values ('" + contentURL + "');";
+//                       db.execSQL(sql);
+                       db.close();
+                   }
                }
            }
 
        }
     );
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         webView = findViewById(R.id.main_webview);
+        //リンクをタップしたときに標準ブラウザを起動させない
         webView.setWebViewClient(new WebViewClient());
+        //JavaScriptを許可
         webView.getSettings().setJavaScriptEnabled(true);
-//        webView.loadUrl("https://www.google.co.jp");
+
+
+        dbHelper = new DatabaseHelper(this);
+        try {
+            dbHelper.createDatabase();
+        }
+        catch (IOException e) {
+            throw new Error("Unable to create database");
+        }
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select contents_url from settings";
+
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(sql, null);
+        int count = cursor.getCount();
+        if (0 < count) {
+            boolean result = cursor.moveToNext();
+            contentsURL = "";
+            contentsURL = cursor.getString(0);
+
+            webView.loadUrl(contentsURL);
+        }
+
+        db.close();
+
     }
 
     @Override
