@@ -8,11 +8,5 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/src/main/assets/lcasx.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="Android SQLite" uuid="2d721b08-f8f6-4679-a01b-fdf87576e7bd">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$USER_HOME$/Library/Caches/JetBrains/IntelliJIdea2022.2/android/databases/EMULATOR_BZ02_dummy_API_33/jp.co.lbm.protox2/internal/lcasx</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>

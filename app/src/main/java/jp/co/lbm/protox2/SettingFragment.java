@@ -11,11 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+///**
+// * A simple {@link Fragment} subclass.
+// * Use the {@link SettingFragment#newInstance} factory method to
+// * create an instance of this fragment.
+// */
 public class SettingFragment extends Fragment implements TextWatcher {
 
 /*
@@ -37,14 +37,14 @@ public class SettingFragment extends Fragment implements TextWatcher {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingFragment.
-     */
+//    /**
+//     * Use this factory method to create a new instance of
+//     * this fragment using the provided parameters.
+//     *
+//     * @param param1 Parameter 1.
+//     * @param param2 Parameter 2.
+//     * @return A new instance of fragment SettingFragment.
+//     */
     // TODO: Rename and change types and number of parameters
 //    public static SettingFragment newInstance(String param1, String param2) {
 //        SettingFragment fragment = new SettingFragment();
@@ -73,8 +73,8 @@ public class SettingFragment extends Fragment implements TextWatcher {
 
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        editText = view.findViewById(R.id.editTextTextPersonName);
-        editText2 = view.findViewById(R.id.editTextTextPersonName2);
+//        editText = view.findViewById(R.id.editTextTextPersonName);
+//        editText2 = view.findViewById(R.id.editTextTextPersonName2);
 
         return view;
     }

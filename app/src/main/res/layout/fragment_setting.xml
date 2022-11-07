@@ -4,49 +4,242 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   tools:context=".SettingFragment" android:id="@+id/frameLayout">
+                                                   tools:context=".SettingFragment"
+                                                   android:id="@+id/frameLayout">
 
     <!-- TODO: Update blank fragment layout -->
+    <!-- ライセンスID -->
     <TextView
-            android:layout_width="0dp"
-            android:layout_height="19dp"
-            android:text="コンテンツURL"
-            android:id="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="16dp"/>
-    <EditText
+            android:text="LicenseID"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:id="@+id/editTextTextPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:id="@+id/textViewLicenseID"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:minHeight="48dp"
-            android:hint="コンテンツURL"
-            tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
     <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/editTextTextPersonName2"
+            android:ems="10"
+            android:id="@+id/editTextLicenseID"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLicenseID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-    />
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck"/>
+    <!-- ライセンスKey -->
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewLicenseKEY"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLicenseID"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp"
+            android:text="LicenceKey"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextLicenseKey"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLicenseKEY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="LicenseKey"
+            android:minHeight="48dp"/>
+    <!-- ドメイングループID -->
+    <TextView
+            android:text="DomainGroupID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDomainIdGroupID"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLicenseKey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextDomainGroupID"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDomainIdGroupID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="DomainGroupID"
+            android:minHeight="48dp"/>
+    <!-- ドメインID -->
+    <TextView
+            android:text="DomainID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDomainID"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDomainGroupID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextDomainID"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDomainID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="DomainID"
+            android:minHeight="48dp"/>
+    <!-- 端末ID -->
+    <TextView
+            android:text="TrimID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTrmID"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDomainID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextTrmID"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTrmID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="TrmID"
+            android:minHeight="48dp"/>
+    <!-- コンテンツ接続URL -->
+    <TextView
+            android:text="InitURL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewInitURL"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTrmID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:ems="10"
+            android:id="@+id/editTextInitURL"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInitURL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="InitURL"
+            android:minHeight="48dp"/>
+    <!-- inc-sv 接続URL -->
+    <TextView
+            android:text="AccessPoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewAccessPoint"
+            app:layout_constraintTop_toBottomOf="@+id/editTextInitURL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:id="@+id/editTextAccessPoint"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAccessPoint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="AccessPoint"
+            android:minHeight="48dp"/>
+    <!-- ステータスバー表示可否 -->
+    <TextView
+            android:text="DisplayStatusBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDisplayStatusBar"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAccessPoint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/editTextDisplayStatusBar"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDisplayStatusBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="DisplayStatusBar"
+            android:minHeight="48dp"/>
+    <!-- WebViewの表示開始位置 -->
+    <TextView
+            android:text="WebViewLayoutY"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewWebViewLayoutY"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDisplayStatusBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/editTextWebViewLayoutY"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWebViewLayoutY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="WebViewLayoutY"
+            android:minHeight="48dp"/>
+    <!-- 端末種別 -->
+    <TextView
+            android:text="TrmType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTrmType"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDisplayStatusBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/editTextTrmType"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTrmType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="DisplayStatusBar"
+            android:minHeight="48dp"/>
+    <!-- 無操作で低輝度へ遷移するまでの秒数 -->
+    <TextView
+            android:text="ChangeBrightnessNoTouchSeconds"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewChangeBrightnessNoTouchSeconds"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTrmType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/editTextChangeBrightnessNoTouchSeconds"
+            app:layout_constraintTop_toBottomOf="@+id/textViewChangeBrightnessNoTouchSeconds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="ChangeBrightnessNoTouchSeconds"
+            android:minHeight="48dp"/>
     <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAccessPoint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/space"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

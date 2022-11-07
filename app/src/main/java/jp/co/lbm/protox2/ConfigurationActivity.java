@@ -36,7 +36,6 @@ public class ConfigurationActivity extends AppCompatActivity {
                 String contentUrlString = settingFragment.editText.getText().toString();
 
                 // MainActivityに戻るので、設定されたコンテンツURLを渡す。
-                // DBに移行するまでの仮コード
                 Intent intent = new Intent();
                 intent.putExtra(MainActivity.CONTENTS_URL, contentUrlString);
 
