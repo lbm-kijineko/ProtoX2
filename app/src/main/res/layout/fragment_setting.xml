@@ -26,8 +26,8 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewLicenseID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck"/>
+            android:hint="LicenseID"
+            android:minHeight="48dp"/>
     <!-- ライセンスKey -->
     <TextView
             android:layout_width="0dp"
@@ -37,7 +37,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp"
             android:text="LicenceKey"/>
     <EditText
             android:layout_width="0dp"
@@ -200,7 +199,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textViewTrmType"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDisplayStatusBar"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWebViewLayoutY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0"/>
