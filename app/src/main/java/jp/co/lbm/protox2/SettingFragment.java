@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+import androidx.annotation.ArrayRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -75,6 +78,10 @@ public class SettingFragment extends Fragment implements TextWatcher {
 
 //        editText = view.findViewById(R.id.editTextTextPersonName);
 //        editText2 = view.findViewById(R.id.editTextTextPersonName2);
+
+        Spinner spinner = view.findViewById(R.id.spinnerTrmType);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(), R.array.itemsTrmType, android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
 
         return view;
     }

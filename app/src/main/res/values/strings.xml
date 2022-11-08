@@ -3,5 +3,13 @@
 
     <string name="overflowmenu_0">設定</string>
     <string name="overflowmenu_1">about</string>
-
+    <string-array name="itemsTrmType">
+        <item></item>
+        <item>窓口操作卓</item>
+        <item>マネージャー操作卓</item>
+        <item>ロビーアドバイザー</item>
+        <item>モニタ</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
